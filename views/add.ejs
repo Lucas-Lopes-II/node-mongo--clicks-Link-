@@ -7,6 +7,17 @@
     <title>add</title>
 </head>
 <body>
-    Hello World
+    <div>
+        <form action='/' method='POST'>
+            <input  placeholder='Título'>
+            <input placeholder='Descrição'>
+            <input placeholder='URL' >
+            <button class='btn'>Salvar</button>
+    
+        <%if(err){%>
+            <h3><%=err.message%></h3>
+        <%}%>
+        </form>
+    </div>
 </body>
 </html>
