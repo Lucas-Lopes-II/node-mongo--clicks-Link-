@@ -9,7 +9,7 @@ let db = mongoose.connection
 db.on('error', () => console.log('houve um erro')); 
 db.once('open', () => console.log('Banco carregado'));
 
-app.use('/', (req, res) => {res.send('Hello World') });
+app.use('/', (req, res) => res.send('Hello World'));
 
 app.listen(PORT, () => {
     try{
