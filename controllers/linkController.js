@@ -2,7 +2,7 @@ const Link = require('../models/Link');
 
 const redirect = async (req, res, next) => {
     let title = req.params.title;
-    try {
+    try{
         let doc = await Link.findOne({ title });
         if(doc){
             res.redrect(doc.url);
@@ -10,7 +10,7 @@ const redirect = async (req, res, next) => {
             next();
         }
     }catch(err){
-        res,send(err.message);
+        res.send(err.message);
     }
 };
 

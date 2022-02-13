@@ -7,4 +7,4 @@ const linkSchema = new mongoose.Schema({
     clicks: { type: Number, default: 0 }
 })
 
-modules.exports = mongoose.model('Link', linkSchema)
+module.exports = mongoose.model('Link', linkSchema)
