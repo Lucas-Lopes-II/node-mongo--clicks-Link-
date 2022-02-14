@@ -15,7 +15,7 @@ const redirect = async (req, res, next) => {
 };
 
 const addLink = async (req, res) => {
-    let link = new Link (req.body);
+    let link = new Link(req.body);
     try{
         let doc = await link.save();
         res.redirect('/');
