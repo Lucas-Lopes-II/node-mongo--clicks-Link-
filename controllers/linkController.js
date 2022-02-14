@@ -14,4 +14,14 @@ const redirect = async (req, res, next) => {
     }
 };
 
-module.exports = { redirect };
+const addLink = async (req, res) => {
+    let link = new Link (req.body);
+    try{
+        let doc = await link.save();
+        res.redirect('/');
+    }catch(err){
+        res.render('add', { err, body: req.body });
+    }
+};
+
+module.exports = { redirect, addLink };
