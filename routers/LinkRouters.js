@@ -6,4 +6,6 @@ router.get ('/', linkController.allLinks);
 router.get ('/:title', linkController.redirect);
 router.get('/add', (req, res) => res.render('add', { err: false, body: {} }));
 
+router.post('/', express.urlencoded({ extended: true }), linkController.addLink);
+
 module.exports = router
