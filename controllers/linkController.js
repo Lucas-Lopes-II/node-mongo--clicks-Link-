@@ -33,4 +33,4 @@ const allLinks = async (req, res) => {
     };
 };
 
-module.exports = { redirect, addLink,  };
+module.exports = { redirect, addLink, allLinks };
