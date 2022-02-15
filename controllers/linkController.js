@@ -24,4 +24,13 @@ const addLink = async (req, res) => {
     }
 };
 
-module.exports = { redirect, addLink };
+const allLinks = async (req, res) => {
+    try{
+        let docs = await Link.find({});
+        res.render('all', { links: docs });
+    }catch(err){
+        res.send(err);
+    };
+};
+
+module.exports = { redirect, addLink,  };
