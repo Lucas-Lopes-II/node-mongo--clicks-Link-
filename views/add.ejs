@@ -7,15 +7,17 @@
     <title>add</title>
 </head>
 <body>
-    <div>
-        <form action='/' method='POST'>
-            <input  placeholder='Título'>
-            <input placeholder='Descrição'>
-            <input placeholder='URL' >
-            <button class='btn'>Salvar</button>
-    
+    <div class="container">
+        <h1>Add Link</h1>
+        <a href="/">All Links</a>
+        <form class="d-flex flex-column justify-content-center" action='/' method='POST'>
+            <input class='ipt' name='title' type='name' placeholder='Título' value='<%=body.title%>' required>
+            <input class='ipt' name='description' type='name' placeholder='Descrição' value='<%=body.description%>'>
+            <input class='ipt' name='url' type='name' placeholder='URL' value='<%=body.url%>' required>
+            <button class='btn'>Save</button>
+
         <%if(err){%>
-            <h3><%=err.message%></h3>
+            <h3 class="alert">Error: <%err.message%></h3>
         <%}%>
         </form>
     </div>
