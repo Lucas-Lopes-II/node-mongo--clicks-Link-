@@ -8,10 +8,10 @@ const redirect = async (req, res, next) => {
             res.redrect(doc.url);
         }else{
             next();
-        }
+        };
     }catch(err){
         res.send(err.message);
-    }
+    };
 };
 
 const addLink = async (req, res) => {
@@ -21,7 +21,7 @@ const addLink = async (req, res) => {
         res.redirect('/');
     }catch(err){
         res.render('add', { err, body: req.body });
-    }
+    };
 };
 
 const allLinks = async (req, res) => {

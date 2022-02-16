@@ -5,6 +5,6 @@ const linkSchema = new mongoose.Schema({
     description: { type: String, default: '(No description)' },
     url: { type: String, required: true },
     clicks: { type: Number, default: 0 }
-})
+});
 
-module.exports = mongoose.model('Link', linkSchema)
+module.exports = mongoose.model('Link', linkSchema);

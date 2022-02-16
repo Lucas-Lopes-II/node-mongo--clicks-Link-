@@ -7,7 +7,7 @@ const PORT = 3000;
 
 mongoose.connect('mongodb://localhost/newLinks', { useNewUrlParser: true, useUnifiedTopology: true });
 
-let db = mongoose.connection
+let db = mongoose.connection;
 db.on('error', () => console.log('houve um erro')); 
 db.once('open', () => console.log('Banco carregado'));
 
@@ -20,6 +20,6 @@ app.listen(PORT, () => {
     try{
         console.log(`Sever running on ${PORT} port`)
     }catch(err){
-        console.log(err)
-    }
+        console.log(err);
+    };
 });
