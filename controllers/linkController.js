@@ -34,7 +34,7 @@ const allLinks = async (req, res) => {
 };
 
 const deleteLink = async (req, res) => {
-    let title = req.params.id;
+    let id = req.params.id;
     if(!id){ id = req.body.id };
     try{
         await Link.findByIdAndDelete(id);

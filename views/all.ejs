@@ -19,11 +19,25 @@
                     <p class="text-info">Clicks: <%=links[i].clicks%></p>
                 </div>
                 <div class="field-btn">
-                    <button class="btn">Delete</button>
+                    <button class="btn" onclick="deleteLink('<%=links[i]._id%>')">Delete</button>
                     <a href="/" class="edit-btn">Edit</a>
                 </div>
             </div>
         <%}%>
     </div>
+    <script>
+        const deleteLink = id => {
+            fetch('/' + id, { method: 'DELETE' }).then(res => {
+                if(res.status == 200){
+                    res.text().then(linkId => {
+                        document.getElementById(linkId).remove();
+                        alert('Link deleted successfully');
+                    });
+                }else{
+                    res.json().then(err => alert(err.message));
+                };
+            });
+        };
+    </script>
 </body>
 </html>
