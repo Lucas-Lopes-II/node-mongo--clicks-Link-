@@ -54,6 +54,23 @@ const loadLink = async (req, res) => {
     };
 };
 
+const editLink = async (req, res) => {
+    let link = {};
+    link.title = req.body.title;
+    link.description = req.body.description;
+    link.url = req.body.url;
 
+    let id = req.params.id;
+    if(!id){ 
+        id = req.body.id 
+    };
+    try{
+        let doc = await Link.updateOne({ _id: id }, link);
+        res.render('edit', { err: false, body: doc });
+        res.redirect('/');
+    }catch(err){
+        res.render('edit', { err, body: req.body });
+    };
+};
 
-module.exports = { redirect, addLink, allLinks, deleteLink, loadLink };
+module.exports = { redirect, addLink, allLinks, deleteLink, loadLink, editLink };
