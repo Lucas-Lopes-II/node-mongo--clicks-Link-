@@ -44,5 +44,16 @@ const deleteLink = async (req, res) => {
     };
 };
 
+const loadLink = async (req, res) => {
+    let id = req.params.id;
+    try{
+        let doc = await Link.findById(id);
+        res.render('edit', { err: false, body: doc });
+    }catch(err){
+        res.status(404).send(err);
+    };
+};
 
-module.exports = { redirect, addLink, allLinks, deleteLink };
+
+
+module.exports = { redirect, addLink, allLinks, deleteLink, loadLink };
