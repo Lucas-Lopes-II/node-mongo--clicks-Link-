@@ -1,11 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const linkRouters = require('./routers/LinkRouters');
 const path = require('path');
-const PORT = 3000;
 
-mongoose.connect('mongodb://localhost/newLinks', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let db = mongoose.connection;
 db.on('error', () => console.log('houve um erro')); 
@@ -16,9 +16,9 @@ app.set('/', path.join(__dirname, 'views'));
 
 app.use('/', linkRouters);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     try{
-        console.log(`Sever running on ${PORT} port`)
+        console.log(`Sever running on ${process.env.PORT} port`)
     }catch(err){
         console.log(err);
     };
