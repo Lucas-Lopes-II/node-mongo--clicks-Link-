@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add</title>
+    <title>Edit</title>
 </head>
 <body>
     <div class="container">
-        <h1>Add Link</h1>
+        <h1>Edit Link</h1>
         <a href="/">All Links</a>
-        <form class="fild-form" action='/' method='POST'>
+        <form class="fild-form" action='/edit/<%=body.id%>' method='POST'>
             <input class='ipt' name='title' type='name' placeholder='Título' value='<%=body.title%>' required>
             <input class='ipt' name='description' type='name' placeholder='Descrição' value='<%=body.description%>'>
             <input class='ipt' name='url' type='name' placeholder='URL' value='<%=body.url%>' required>
-            <button class='btn'>Save</button>
+            <button class='btn'>Edit</button>
 
         <%if(err){%>
             <h3 class="alert">Error: <%err.message%></h3>

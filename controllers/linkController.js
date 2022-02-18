@@ -44,4 +44,5 @@ const deleteLink = async (req, res) => {
     };
 };
 
+
 module.exports = { redirect, addLink, allLinks, deleteLink };
