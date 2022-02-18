@@ -8,6 +8,7 @@ router.get('/add', (req, res) => res.render('add', { err: false, body: {} }));
 router.get('/edit/:id', linkController.loadLink)
 
 router.post('/', express.urlencoded({ extended: true }), linkController.addLink);
+router.post('/edit/:id', express.urlencoded({ extended: true }), linkController.editLink);
 
 router.delete('/:id', linkController.deleteLink);
 router.delete('/:id', express.json(), linkController.deleteLink);
