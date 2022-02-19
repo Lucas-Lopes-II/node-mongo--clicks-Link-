@@ -20,8 +20,8 @@
                 <input class='mb-3' name='url' type='name' placeholder='URL' value='<%=body.url%>' required>
                 <button class='btn btn-primary'>Save</button>
 
-            <%if(err){%>
-                <h3 class="alert alert-danger">Error: <%err.message%></h3>
+            <%if(error){%>
+                <h3 class="alert alert-danger">Error: <%error.message%></h3>
             <%}%>
             </form>
         </div>

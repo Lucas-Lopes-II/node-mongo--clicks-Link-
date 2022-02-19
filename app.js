@@ -19,7 +19,7 @@ app.use('/', linkRouters);
 app.listen(process.env.PORT, () => {
     try{
         console.log(`Sever running on ${process.env.PORT} port`)
-    }catch(err){
-        console.log(err);
+    }catch(error){
+        console.log(error);
     };
 });
