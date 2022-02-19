@@ -1,5 +1,5 @@
 # Clicks on Link
->Aplicação em NodeJS para cadastrar links e contar quantos clicks eles recebem e tudo fica registrado no banco de dado (MongoDB). 
+>Aplicação em NodeJS para cadastrar links e contar quantos clicks eles recebem, e tudo fica registrado no banco de dados (MongoDB). 
 ---
 <br/>
 
